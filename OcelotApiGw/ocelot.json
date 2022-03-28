@@ -1,0 +1,114 @@
+{
+  "Routes": [
+    //Onboarding API
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+
+      //Caching
+      "FileCacheOptions": {
+        "TtlSeconds": 30
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/VerifyEmail/{Email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/VerifyEmail/{Email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/VerifyPhone/{Phone}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/VerifyPhone/{Phone}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetAllOnboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetAllOnboarding",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetOnboardingByEmail/{Email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetOnboardingByEmail/{Email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/GetOnboardingByPhone/{Phone}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/GetOnboardingByPhone/{Phone}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Onboarding/Onboarding",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "Onboarding.api",
+          "Port": "44313"
+        }
+      ],
+      "UpstreamPathTemplate": "/Onboarding/Onboarding",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    
+
+
+    //Banks API
+    {
+      "DownstreamPathTemplate": "/api/v1/Banks/GetBank",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44333"
+        }
+      ],
+      "UpstreamPathTemplate": "/Banks/GetBank",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44355"
+  }
+}
